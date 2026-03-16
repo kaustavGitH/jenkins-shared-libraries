@@ -5,7 +5,7 @@ def call(Map config = [:]){
   def imageTag = config.imageTag ?: 'latest'
   def dockerHubUser = config.dockerHubUser ?: error ("Dockerhub user is required")
 
-  echo "Running docker image: ${dockerHubUser}/${imageName}:${imageTag}
+  echo "Running docker image: ${dockerHubUser}/${imageName}:${imageTag}"
 
   sh """
       docker run -d -p ${hostPort}:${containerPort} ${dockerHubUser}/${imageName}:${imageTag}
